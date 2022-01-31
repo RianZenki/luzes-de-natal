@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(39, 26, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    padding: 20px;
+}
+
+.circulo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 50px;
+
+    animation-duration: 1s;
+}
+
+.circulo::after {
+    content: '';
+    width: 70px;
+    height: 25px;
+    background-color: rgb(99, 94, 94);
+    border-bottom: 5px solid rgb(49, 49, 49);
+    border-radius: 5px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-51%);
+
+    z-index: 1;
+}
+
+.circulo::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: -45%;
+    right: -65%;
+    border-radius: 40%;
+    border-bottom: 5px solid rgb(59, 52, 52);
+
+    z-index: 2;
+}
+
+.circulo:last-child::before {
+    content: '';
+    border: none;
+}
+
+.vermelho {
+    background-color: red;
+    box-shadow: 0 0 10px red;
+    opacity: 0.5;
+    transition: animation 0.5s;
+
+    animation-delay: 0.5s;
+
+    animation-name: acenderVermelho;
+    animation-iteration-count: infinite;
+}
+
+@keyframes acenderVermelho {
+    0% {
+        box-shadow: 0 0 0px red;
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 50px red;
+    }
+
+    100% {
+        box-shadow: 0 0 0px red;
+        opacity: 0.5;
+    }
+}
+
+.verde {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+    opacity: 0.6;
+    transition: animation 0.3s;
+
+    animation-delay: 1s;
+    animation-name: acenderVerde;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes acenderVerde {
+    0%,
+    100% {
+        box-shadow: 0 0 0px green;
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 50px green;
+    }
+}
+
+.azul {
+    background-color: blue;
+    box-shadow: 0 0 10px blue;
+    opacity: 0.6;
+    transition: animation 0.3s;
+
+    animation-delay: 0.5s;
+    animation-name: acenderAzul;
+    animation-iteration-count: infinite;
+}
+
+@keyframes acenderAzul {
+    0%, 
+    100% {
+        box-shadow: 0 0 0px blue;
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 50px blue;
+    }
+
+}
+
+.amarelo {
+    background-color: yellow;
+    box-shadow: 0 0 10px yellow;
+    opacity: 0.6;
+    transition: all 0.3s;
+
+    animation-delay: 1s;
+    animation-name: acenderAmarelo;
+    animation-iteration-count: infinite;
+}
+
+@keyframes acenderAmarelo {
+    0%,
+    100% {
+        box-shadow: 0 0 0px yellow;
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 50px yellow;
+    }
+
+}
+
+
+.controller {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+    width: 600px;
+    height: 50px;
+}
+
+button {
+    font-size: 16px;
+    color: white;
+    background-color: rgb(39, 26, 51);
+    border: solid 3px rgb(84, 87, 235);
+    cursor: pointer;
+}
+
+button#ligar {
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 30px;
+}
+
+input[type="number"] {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    border: solid 1px black;
+    margin-left: 10px;
+    padding: 10px;
+    outline: none;
+}
+
+button#alterarVel {
+    width: 70px;
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    margin-left: 5px;
+}
